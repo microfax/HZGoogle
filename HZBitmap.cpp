@@ -326,8 +326,12 @@ void CHZBitmap::LoadImage(BYTE* pBuff, int nSize)
 	stream.Attach(pMemStream); // Need to Attach, otherwise ownership is not transferred and we leak memory
 	CImage imgIn;
 	imgIn.Load(stream);
+	
 	int width = imgIn.GetWidth();
 	int height = imgIn.GetHeight();
+
+	if (width == 0 || height == 0) return;
+
 	int inPitch = imgIn.GetPitch();
 	int nDepth = imgIn.GetBPP();
 	BYTE* inPtr = (BYTE*)imgIn.GetBits();

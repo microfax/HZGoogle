@@ -2492,8 +2492,8 @@ BOOL CHZBitmapPadder::ProcessPixels(RGBX* pSrcPixels, CSize sizeSrc, RGBX* pDest
 	
 	if (m_nAlignment==-1)
 	{
-		x = ((sizeDest.cx - sizeSrc.cx) * m_fXPos);
-		y = ((sizeDest.cy - sizeSrc.cy) * m_fYPos);
+		x = -(float(sizeSrc.cx) * m_fXPos);
+		y = -(float(sizeSrc.cy) * m_fYPos);
 		//x = m_fXPos;
 		//y = m_fYPos;
 	}

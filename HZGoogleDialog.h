@@ -29,7 +29,11 @@ public:
 	CArray<CHZBitmap*, CHZBitmap*> m_arrImages;
 	CString m_strWord;
 	int m_nIndex = -1;
+	int m_nWord = 0;
 	CRect m_rcCrop;
+	CRect m_rcButton;
+	int m_nSize = 120;
+	CStringArray m_arrWords;
 
 	void ClearThumbs();
 
@@ -47,4 +51,5 @@ public:
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 };
